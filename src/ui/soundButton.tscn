@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://6eeohofsrx5"]
+
+[node name="SoundButton" type="Button" unique_id=1222808278]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=646737627]

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cuurifhds2apf"]
+
+[ext_resource type="Script" uid="uid://c3l1t4dt8wqbn" path="res://src/entities/door/door.gd" id="1_ckqm2"]
+[ext_resource type="Texture2D" uid="uid://dew38havm2a2h" path="res://assets/sprites/objects/door.png" id="2_yhtr6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3jrsr"]
+size = Vector2(22, 29)
+
+[sub_resource type="DPITexture" id="DPITexture_3jrsr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkyon"]
+atlas = ExtResource("2_yhtr6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3jrsr"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkyon")
+}],
+"loop": 0,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="Door" type="Area2D" unique_id=983944967]
+script = ExtResource("1_ckqm2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1373873825]
+position = Vector2(0, -14.5)
+shape = SubResource("RectangleShape2D_3jrsr")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1935217764]
+emitting = false
+texture = SubResource("DPITexture_3jrsr")
+one_shot = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1717259001]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_3jrsr")
+animation = &"open"

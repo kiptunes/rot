@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c0peyherg8me"]
+
+[ext_resource type="Texture2D" uid="uid://djv7tqat3ydhj" path="res://assets/sprites/tilesets/infected_tile.png" id="1_x4dn0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upsa8"]
+atlas = ExtResource("1_x4dn0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2egb"]
+atlas = ExtResource("1_x4dn0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r8k5"]
+atlas = ExtResource("1_x4dn0")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pg65"]
+atlas = ExtResource("1_x4dn0")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn5tn"]
+atlas = ExtResource("1_x4dn0")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmv4b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upsa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2egb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r8k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pg65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn5tn")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="InfectedSprite" type="AnimatedSprite2D" unique_id=2116096705]
+sprite_frames = SubResource("SpriteFrames_bmv4b")
+autoplay = "default"

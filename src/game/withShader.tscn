@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bpchsp0ovi7ye"]
+
+[ext_resource type="PackedScene" uid="uid://g3nlfb2frfll" path="res://src/game/gameConductor.tscn" id="1_6wks0"]
+[ext_resource type="Script" uid="uid://d4gv8pv2u3dys" path="res://src/game/sub_viewport.gd" id="1_72eqd"]
+[ext_resource type="Shader" uid="uid://dkwygeah4hgxr" path="res://assets/shaders/crt.gdshader" id="2_72eqd"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0xjvu"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jrsr"]
+resource_local_to_scene = true
+shader = ExtResource("2_72eqd")
+shader_parameter/tex = SubResource("ViewportTexture_0xjvu")
+shader_parameter/mask_type = 1
+shader_parameter/curve = 0.10000000475
+shader_parameter/color_offset = -0.5
+shader_parameter/mask_brightness = 1.0
+shader_parameter/aspect = 0.75
+
+[node name="WithShader" type="Control" unique_id=623489872]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_72eqd")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=975353647]
+gui_disable_input = true
+size = Vector2i(256, 220)
+render_target_update_mode = 4
+
+[node name="GameConductor" parent="SubViewport" unique_id=1663880116 instance=ExtResource("1_6wks0")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=384491551]
+material = SubResource("ShaderMaterial_3jrsr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

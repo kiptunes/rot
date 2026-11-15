@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://b27fat0ota85"]
+
+[ext_resource type="Shader" uid="uid://dkwygeah4hgxr" path="res://assets/shaders/crt.gdshader" id="1_at5q7"]
+[ext_resource type="FontFile" uid="uid://doyuvxygy25se" path="res://assets/ui/fonts/terminal 16 unicode.ttf" id="1_o7i0s"]
+[ext_resource type="FontFile" uid="uid://dbkiieffp05yn" path="res://assets/ui/fonts/pixel-crash-trial/PIXELCRASH TRIAL.otf" id="3_fp522"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_77frk"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jrsr"]
+resource_local_to_scene = true
+shader = ExtResource("1_at5q7")
+shader_parameter/tex = SubResource("ViewportTexture_77frk")
+shader_parameter/mask_type = 2
+shader_parameter/curve = 0.02000000095
+shader_parameter/color_offset = -0.5
+shader_parameter/mask_brightness = 1.0
+shader_parameter/aspect = 0.75
+
+[node name="TestUI" type="Control" unique_id=1617305361]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=322483130]
+material = SubResource("ShaderMaterial_3jrsr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1142703265]
+size = Vector2i(540, 440)
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport" unique_id=35670980]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewport" unique_id=107263045]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 36
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 36
+theme_override_constants/margin_bottom = 36
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/MarginContainer" unique_id=987441711]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport/MarginContainer/HBoxContainer" unique_id=220596808]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SubViewport/MarginContainer/HBoxContainer/VBoxContainer" unique_id=570974744]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1587134222]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ExitContainer" type="Panel" parent="SubViewport/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=682330156]
+custom_minimum_size = Vector2(220, 220)
+custom_maximum_size = Vector2(240, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=180670056]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button0" type="Button" parent="SubViewport/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=62150344]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_o7i0s")
+text = "STATUS"
+
+[node name="Button1" type="Button" parent="SubViewport/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1012085117]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_o7i0s")
+text = "ACT"
+
+[node name="Button2" type="Button" parent="SubViewport/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1950477632]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_o7i0s")
+text = "OMEN"
+
+[node name="Button3" type="Button" parent="SubViewport/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=170145613]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_o7i0s")
+text = "ITEM"
+
+[node name="Button4" type="Button" parent="SubViewport/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=84993377]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_o7i0s")
+theme_override_font_sizes/font_size = 16
+text = "SLEEP"
+
+[node name="TextContainer" type="PanelContainer" parent="SubViewport/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2043416710]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="SubViewport/MarginContainer/HBoxContainer/VBoxContainer/TextContainer" unique_id=847419242]
+custom_maximum_size = Vector2(330, -1)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_o7i0s")
+theme_override_font_sizes/font_size = 14
+text = "        well, there is some text here.. how wonderful!"
+autowrap_mode = 2
+
+[node name="Panel" type="Panel" parent="SubViewport/MarginContainer/HBoxContainer" unique_id=1955635576]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -24)
+offset_transform_scale = Vector2(1, 1.12)
+
+[node name="Label" type="Label" parent="SubViewport" unique_id=48603975]
+offset_left = 36.0
+offset_top = 208.0
+offset_right = 504.0
+offset_bottom = 231.0
+theme_override_fonts/font = ExtResource("3_fp522")
+theme_override_font_sizes/font_size = 40
+text = "font test"
